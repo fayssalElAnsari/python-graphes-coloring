@@ -8,4 +8,6 @@
 
 ## Problème commun
 
+## Citations
 
+Si vous utilisez des éléments lus par ailleurs, citez vos sources.
