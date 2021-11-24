@@ -10,8 +10,8 @@ On prefere d'avoir une haute complexite d'espace de memoire, c'est a dire avoir 
 
 Dans notre modelisation on doit repondre a un nombre minimale de questions.
 * C'est quoi la signification d'un noeud dans ce graphe? `relation: noeud -> element de probleme` 
-* Qu'est ce que c'est la signification de la information qui exist dans un noeud par rapport au probleme? `info_noeud = variable1(element[i])`
-* Qu'est ce que c'est la signification de la couleur d'un noeud par rapport au probleme? `couleur_noeud[i] = variable2(element[i])`
+* Qu'est ce que c'est la signification de la information qui exist dans un noeud par rapport au probleme? `info(noeud[i]) = variable1(element[i])`
+* Qu'est ce que c'est la signification de la couleur d'un noeud par rapport au probleme? `couleur(noeud[i]) = variable2(element[i])`
 * Quelle est la signification d'une arette dans un certain graphe? `relation: arrete -> relation entre elements` 
 * Comment resoudre le probleme? `conditions a respecter par l'algorithm de resolution`
 
