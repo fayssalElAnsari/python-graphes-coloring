@@ -21,6 +21,7 @@ Dans ce problème on définit:
 ```
 *	Les cellules qui appartiennent au `même bloque, ligne, colonne` sont tous relie (DIRECTEMENT) par une `arête`. Par ce qu’il est impossible qu’ils ont tous la même valeur on est obligée de déterminer la relation entre eux. Si une cellule est avec une autre dans le même bloque ou ligne ou colonne c'est n'est pas nécessaire de définir le type de relation ou de traiter les différents types de relations de manières différentes par ce que finalement ils subissent tous la même condition (de ne pas avoir la même valeur).
 *	La condition qui existe entre les nœuds DIRECTEMENT lies est que c'est impossible pour eux d'avoir la même couleur.
+###### il y aura des grille deja remplies par des nombre, et donc des noeds deja coloriees
 ## Modélisation du coloriage de cartes
 Dans ce problème on définit :
 *	Chaque `pays` dans la carte par un `nœud`. Et ça vient du fait que chaque pays a un nom unique qui sert comme un id et donc l'information dans le nœud. L'autre information que l'algorithme va essayer de déterminer pour résoudre le problème est la couleur de pays et donc la couleur du nœud et la même que celle du pays.
@@ -44,7 +45,7 @@ Dans ce problème on définit :
 
 J'ai cru qu'il y aura un algorithme complètement diffèrent des problèmes qui le décris indirectement, trouver le plus proche voisin par exemple pour résoudre le problème. Mais la modélisation n'est pas très différente, on est censé colorer les nœuds (comme dans le 2eme problème les pays).
 
-On peut trouver une solution en traversant le graphe plusieurs fois avec un certain nombre minimum de couleurs et a chaque fois on colorie le maximum nombre de nœuds possible avec une certaine couleur. Le nombre des fois à traverser un graphe sera le même que de couleurs ? Comment déterminer le nombre minimal de couleurs à avoir ? avec le nombre maximal d'arrêt d'un nœud dans tout le graphe ?
+On peut trouver une solution en traversant le graphe plusieurs fois avec un certain nombre minimum de couleurs et a chaque fois on colorie le maximum nombre de nœuds possible avec une certaine couleur. Le nombre des fois à traverser un graphe sera le même que de couleurs ? Comment déterminer le nombre minimal de couleurs à avoir ? avec le nombre maximal d'arrêt d'un nœud dans tout le graphe ? Nous allons utiliser le back tracking.
 
 ## Citations
 
