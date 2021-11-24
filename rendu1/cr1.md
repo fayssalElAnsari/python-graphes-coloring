@@ -53,4 +53,3 @@ Dans ce probleme on definie:
 ## Citations
 
 
-Si vous utilisez des éléments lus par ailleurs, citez vos sources.
