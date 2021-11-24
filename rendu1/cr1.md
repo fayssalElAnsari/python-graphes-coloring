@@ -51,6 +51,10 @@ Dans ce probleme on definie:
 ## Problème commun
 * colorier les noeuds directment lies par des couleurs differentes :smile: .
 
+J'ai cru qu'il y aura un algorithm completement different des problemes qui le decris indirectement, trouver le plus proche voisin par exmple pour resoudre le probleme. Mais la modelisation n'est pas tres differente, on est censé colorer les noeuds (comme dans le 2eme probleme les pays). 
+
+On peut trouver une solution en traversant le graphe plusieur fois avec un certain nombre minimum de couleurs et a chaque fois on colorie le maximum nombre de neouds possible avec une certaine couleur. Le nombre des fois a traverser un graphes sera le meme que de couleurs? Comment determiner le nombre minimal de couleurs a avoir? avec le nombre maximale d'arret d'un neod dans tous le graphe?
+
 ## Citations
 
 
