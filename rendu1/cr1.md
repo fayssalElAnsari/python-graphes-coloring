@@ -49,7 +49,7 @@ Dans ce probleme on definie:
 * La condition qui existe entre les neouds DIRECTEMENT lies est que c'est impossible pour eux d'avoir la meme couleur. (meme condition que celle en haut)
 
 ## Problème commun
-* colorier les noeuds directment lies par des couleurs differentes :D .
+* colorier les noeuds directment lies par des couleurs differentes :smile: .
 
 ## Citations
 
