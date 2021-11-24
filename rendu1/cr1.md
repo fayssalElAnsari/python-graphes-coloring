@@ -45,5 +45,6 @@ Dans ce problème on définit :
 J'ai cru qu'il y aura un algorithme complètement diffèrent des problèmes qui le décris indirectement, trouver le plus proche voisin par exemple pour résoudre le problème. Mais la modélisation n'est pas très différente, on est censé colorer les nœuds (comme dans le 2eme problème les pays).
 
 On peut trouver une solution en traversant le graphe plusieurs fois avec un certain nombre minimum de couleurs et a chaque fois on colorie le maximum nombre de nœuds possible avec une certaine couleur. Le nombre des fois à traverser un graphe sera le même que de couleurs ? Comment déterminer le nombre minimal de couleurs à avoir ? avec le nombre maximal d'arrêt d'un nœud dans tout le graphe ?
-Citations
+
+## Citations
 
