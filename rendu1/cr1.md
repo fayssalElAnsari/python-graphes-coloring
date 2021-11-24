@@ -40,11 +40,12 @@ Dans ce probleme on definie:
 ## Modélisation de l'attribution de fréquences
 Dans ce probleme on definie:
 * Chaque `antenne` par un `noeud`. On peut imaginer q'une antenne a une ID ou cocordonnees unique, meme chose pour l'informatioon dans son noeud.
-
-* Les `antennes voisines` sont relie DIRECTEMENT par une `arrete` dans le graphe. Car c'est impossible d'avoir des antennes directement lies qui ont la meme fréquence.
 ```
 (noed == antenne) : info_noeud --> coord_antenne; couleur_noeud --> fréquence_antenne
 ```
+
+* Les `antennes voisines` sont relie DIRECTEMENT par une `arrete` dans le graphe. Car c'est impossible d'avoir des antennes directement lies qui ont la meme fréquence.
+
 * La condition qui existe entre les neouds DIRECTEMENT lies est que c'est impossible pour eux d'avoir la meme couleur. (meme condition que celle en haut)
 
 ## Problème commun
