@@ -11,13 +11,15 @@ On prefere d'avoir une haute complexite d'espace de memoire, c'est a dire avoir 
 Dans notre modelisation on doit repondre a un nombre minimale de questions.
 * C'est quoi la signification d'un noeud dans ce graphe? `relation: noeud -> element de probleme` 
 * Quelle est la signification d'une arette dans un certain graphe? `relation: arrete -> element de probleme` 
-* Comment resoudre le probleme? `algorithm de resolution`
+* Comment resoudre le probleme? `algorithm de resolution/conditions`
 
 ## Modélisation du sudoku
 Dans ce probleme on definie:
-* Chaque `cellule` dans la grille par un `noeud`. Et ca vient du faite que chaque cellule va contenir une information specifique a elle meme (comme pour un noeud). 
+* Chaque `cellule` dans la grille par un `noeud`. Et ca vient du faite que chaque cellule va contenir une information specifique a elle meme (comme pour un noeud), et donc le valeur dans le neoud et le meme que celle dans la cellule. 
 
-* Les cellules qui appartient au `meme bloque, ligne, colonne` sont tous relie par une `arrete`. Par ce que il est impossible qui'il sont tous  
+* Les cellules qui appartient au `meme bloque, ligne, colonne` sont tous relie (DIRECTEMENT) par une `arrete`. Par ce que il est impossible qui'ils ont tous la meme valeur on est obligee de determiner la relation entre eux. Si une cellule est avec une autre dans le meme bloque ou ligne ou colonne c'est n'est pas necessaire de definir le types de type de relation ou de traiter les differents types de relations de manieres differente par ce que finalement ils subit tous la meme condition (de ne pas avoir la meme valeur). 
+
+* La condition qui existe entre les neoud DIRECTEMENT lies est que c'est impossible pour eux d'avoir la meme valeur.
 
 ## Modélisation du coloriage de cartes
 
