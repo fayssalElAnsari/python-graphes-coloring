@@ -9,7 +9,7 @@ On peut trouver une solution en traversant le graphe plusieurs fois avec un cert
 ### Explication de ce qu’on entend par un probleme difficile:
 * on veut dire ici par un probleme difficile un probleme ou c'est difficile de savoir s'il existe une solution avant de faire le calcul,
 * Il existe plusieurs solutions possibles.
-* dans des cas differents il est possible d'avoir un algorithm optimal different 
+* dans des cas differents il est possible d'avoir un algorithm optimal different
   
 ### definition d'une heuristique:
 * c'est une maniere pour resoudre un probleme qui est tres similaire a l'essaye-erreur/brute force. Il n'existe pas d'un seul algorithm optimal pour trouver la solution.
@@ -62,7 +62,9 @@ il suffit de parcourir le graphe une seul foix en largeur donc
 AKA Backtracking 
 
 ### Idée
-Pour avoir un nombre minimal des couleurs a utiliser, nous allons utiliser le backtracking c'est a dire: 
+Pour avoir un nombre minimal des couleurs a utiliser, nous allons utiliser le backtracking c'est a dire: lorsque on prend la liste qui est la difference entre les deux listes les coueleurs deja utilisee et les couleurs des voisins, si la liste contient plus qu'un seul element on est obligee de faire un choix entre ces plusieurs couleurs. En meme temps si on ne peut pas utiliser aucune des couleurs c'est a dire la liste est vide, ce resultat est une consequence des choix anterieurs qu'on a fait. Donc on peut relier ces deux affirmations pour avoir dire que si on a choisis la deuxieme couleur par exemple au lieu de la premiere nous seront pas obligee d'ajouter une nouvelle couleur pour resoudre le probleme.
+
+Finalement pour etre sur d'avoir un nombre minimal de couleurs a chaque resolution on peut garder une historique de nos choix faites et les choix possibles et avant d'ajouter une nouvelle couleur on peut revenir pour modifier notre choix et a chaque fois on revient encore jusqu'au premier noeud si on essaye tout les decisions possibles on peut dire que le faite que l'algorithm est bloque ne depend pas de nos choix et donc il faut absolument ajouter une couleur pour resoudre le probleme.
 
 ### Algorithme
 Sous forme de pseudocode.
