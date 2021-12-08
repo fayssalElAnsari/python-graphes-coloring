@@ -109,7 +109,25 @@ Pour avoir un nombre minimal des couleurs a utiliser, nous allons utiliser le ba
 Finalement pour etre sur d'avoir un nombre minimal de couleurs a chaque resolution on peut garder une historique de nos choix faites et les choix possibles et avant d'ajouter une nouvelle couleur on peut revenir pour modifier notre choix et a chaque fois on revient encore jusqu'au premier noeud si on essaye tout les decisions possibles on peut dire que le faite que l'algorithm est bloque ne depend pas de nos choix et donc il faut absolument ajouter une couleur pour resoudre le probleme.
 
 ### Algorithme
-Sous forme de pseudocode.
+```python
+#on a deja definie la fonction est_correct(graph g) au dessus
+Noued_test(g, max, couleurs, noeud):
+    si noeud == g.couleurs[0]:
+        return True
+
+    pour c in range(1, m + 1):
+        si est_correct(g) == True:
+            noeud.couleur = couleur[c]
+            si self.noeud_test(g, max, couleurs, c + 1) == True:
+                return True
+            colour[c] = 0
+  
+def colorier_graph_backtrack(g, max, couleur):
+    si noeud_test(max, colour, 0) == NULL:
+        return False
+
+    imprimer_solution(g)
+```
 
 ### Complexité
 Le pire des cas est le meme par ce que dans le pire des cas nous allons tester toutes les combinaisons possible de coloriage: O(c^v) mais le temps en moyenne de plusieurs resolutions sera moins que dans le cas de l'algorithm naif pratiquement.
