@@ -40,7 +40,7 @@ colorier(G, départ, déjà_visités= NIL )
         couleurs_voisins ← getCouleursVoisins();
         sommet ← a_traiter.défiler();
         si ¬ déjà_visités[sommet] alors
-            couleur = couleurs_utilises - couleurs_voisins)[0]:
+            couleur = (couleurs_utilises - couleurs_voisins)[0]:
                 si couleur:
                     sommet.colorier(couleur)
                     couleurs_utilises.enfiler(couleur)
