@@ -73,6 +73,17 @@ Après avoir généré une configuration de couleur, vérifiez si les sommets ad
 * Comme on gerene la liste complete des toute les combinaisons possible et on va les tester, le complexite de temps sera: O(c^V)
 
 ### Pseudocode 
+```python
+est_correct(g):
+    # pour chaque arete
+    pour arete in g.aretes:
+            si (arete[0].couleur == arete[1].color): #si les deux nueods de l'aretes ont la meme couleur donc c'est incorrecte
+                return False
+    return True
+
+
+
+```
 
 ## III. Algorithme heuristique
 AKA Backtracking 
