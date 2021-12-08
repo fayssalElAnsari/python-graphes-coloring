@@ -56,7 +56,7 @@ colorier(G, départ, déjà_visités= NIL )
 ```
 
 ### Complexité
-il suffit de parcourir le graphe une seul foix en largeur donc 
+il suffit de parcourir le graphe une seul foix en largeur et donc a partir du pseudocode: O(c^v)
 
 ## Algorithme heuristique
 AKA Backtracking 
