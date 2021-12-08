@@ -72,6 +72,7 @@ Sous forme de pseudocode.
 ### Complexité
 
 ### Limites
+Le probleme avec le backtracking sans ordoner les couleurs est qu'on peut resoudre le probleme dans une duree tres courte ou tres longue. Avec un choix de couleur aleatoire il n'y a pas beaucoup de place pour l'amélioration. Donc il faut reflechir a ordoner les couleurs a choisir et les noeuds a colorier par degree, et colorier le graph par ordre decroissant des noeuds.
 
 ## Citations
-Si vous utilisez des éléments lus par ailleurs, citez vos sources.
+
