@@ -24,7 +24,7 @@ qu'on a de couleurs pour a chaque fois colorier les neouds autant que possible. 
 On commence par l'hyposthese qu'il existe une solution et on commence a tester. Et si on peut pas colorier un noeud avec un des couleurs qu'on a dans la liste on peut dire que le probleme n'a pas de solution meme si la possibilite d'avoir une solution dans ce cas depend des choix d'ordre des couleurs.
 
 ### Algorithme
-###### ce n'est pas necessaire de savoir la liste de couleurs qu'on va utiliser avant en evance.
+###### ce n'est pas necessaire de savoir la liste de couleurs qu'on va utiliser en evance.
 1. On parcours le graphe soit en largeur soit en profondeur, tout en gardant une trace de la liste des couleurs qu'on a deja utilise. 
 2. Pour chaque noeud nous allons essayer de le colorier avec les couleurs qu'on a deja utilise si c'est impossible de le faire (il existe un noeud voisin de ce noeud colorier avec la meme couleur => on passe au suivant) on va ajouter une nouvelle couleur et l'ajouter a la liste des couleurs deja utilisee.
 
@@ -75,4 +75,4 @@ Sous forme de pseudocode.
 Le probleme avec le backtracking sans ordoner les couleurs est qu'on peut resoudre le probleme dans une duree tres courte ou tres longue. Avec un choix de couleur aleatoire il n'y a pas beaucoup de place pour l'amélioration. Donc il faut reflechir a ordoner les couleurs a choisir et les noeuds a colorier par degree, et colorier le graph par ordre decroissant des noeuds.
 
 ## Citations
-
+Cours graphes - Jean Stephane VAREE - chapitre II
