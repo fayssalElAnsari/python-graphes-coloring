@@ -59,8 +59,10 @@ colorier(G, départ, déjà_visités= NIL )
 il suffit de parcourir le graphe une seul foix en largeur donc 
 
 ## Algorithme heuristique
+AKA Backtracking 
 
 ### Idée
+Pour avoir un nombre minimal des couleurs a utiliser, nous allons utiliser le backtracking c'est a dire: 
 
 ### Algorithme
 Sous forme de pseudocode.
@@ -70,5 +72,4 @@ Sous forme de pseudocode.
 ### Limites
 
 ## Citations
-
 Si vous utilisez des éléments lus par ailleurs, citez vos sources.
