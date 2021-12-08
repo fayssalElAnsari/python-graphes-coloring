@@ -6,6 +6,8 @@
 On peut trouver une solution en traversant le graphe plusieurs fois avec un certain nombre minimum de couleurs et a chaque fois on colorie le maximum nombre de nœuds possible avec une certaine couleur. Le nombre des fois à traverser un graphe sera le même que de couleurs ? Comment déterminer le nombre minimal de couleurs à avoir ? avec le nombre maximal d'arrêt d'un nœud dans tout le graphe ? Nous allons utiliser le back tracking.
 
 ## De la difficulté de résoudre le problème
+c'est un Problème NP-complet, c'est un problem de calcul ou aucun algorithme de solution efficace n'a été trouvé. De nombreux problèmes informatiques importants appartiennent à cette classe, par exemple le problème du voyageur de commerce, les problèmes de satisfiabilité et les problèmes de coloriage de graphe.
+
 ### Explication de ce qu’on entend par un probleme difficile:
 * on veut dire ici par un probleme difficile un probleme ou c'est difficile de savoir s'il existe une solution avant de faire le calcul,
 * Il existe plusieurs solutions possibles.
