@@ -74,12 +74,27 @@ Après avoir généré une configuration de couleur, vérifiez si les sommets ad
 
 ### Pseudocode 
 ```python
+# pour tester si le graphe avec la coloration actuelle est une solution
 est_correct(g):
     # pour chaque arete
     pour arete in g.aretes:
             si (arete[0].couleur == arete[1].color): #si les deux nueods de l'aretes ont la meme couleur donc c'est incorrecte
                 return False
     return True
+
+colorier_graph(g, max, i, couleurs):
+    si (i == max):
+        si (est_correct(g)):
+            imprimer_solution(g)#une fonction quelquonque pour imprimer la solution
+            return True
+        return False
+    pour noeud in graph.noeuds:
+        pour j in range(1, max + 1):
+            noeud.color= couleurs[i]
+            if (colorier_graph(g, m, i + 1, couleurs)):
+                return True
+            couleurs[i] = 0
+    return False
 
 
 
