@@ -14,7 +14,7 @@ On peut trouver une solution en traversant le graphe plusieurs fois avec un cert
 ### definition d'une heuristique:
 * c'est une maniere pour resoudre un probleme qui est tres similaire a l'essaye-erreur/brute force. Il n'existe pas d'un seul algorithm optimal pour trouver la solution.
 
-## Algorithme test
+## I. Algorithme test
 L'algorithm naif proposee est de parcourir l'arbre une premiere fois pour trouver le nombre maximale de neodus qui est relier a un autre noeud dans tout le graphe.
 Et apres on va avoir le nombre de couleurs a utiliser. Apres cette premiere etape il est possible de faire un entre deux choix. Le premier consiste a parcourir l'arbre autant de fois
 qu'on a de couleurs pour a chaque fois colorier les neouds autant que possible. En respectant la condition de ne pas avoir deux nueods adjacent qui ont la meme couleur. L'autre choix consiste a parcourir le graphe une seul fois en faisant le choix de couleur d'une liste ordonne. En commancant par la premiere couleur si c'est pas possible de colorier le noeud avec cetter couleur on essaye si la deuxieme couleur dans la liste est possible et ainsi de suite. Cette maniere prend en compte le fait qu'on doit avoir la liste des couleurs au debut de l'execution du programme. En utilisant C par exemple c'est plus facile. Mais comme nous allons utiliser Python on peur utiliser les listes et une liste de couleurs variables.
@@ -57,7 +57,7 @@ colorier(G, départ, déjà_visités= NIL )
 ### Complexité
 il suffit de parcourir le graphe une seul foix en largeur et donc a partir du pseudocode, dans le pire des cas: O(c*v)
 
-### Algorithm naif
+### II. Algorithm naif
 ### Idée  
 Générez toutes les configurations de couleurs possibles. Étant donné que chaque nœud peut être coloré à l'aide de n'importe laquelle des m couleurs disponibles, le nombre total de configurations de couleurs possibles est: de c^V.
 Après avoir généré une configuration de couleur, vérifiez si les sommets adjacents ont la même couleur ou non. Si les conditions sont remplies, imprimez la combinaison et rompez la boucle.
@@ -65,7 +65,7 @@ Après avoir généré une configuration de couleur, vérifiez si les sommets ad
 ### Algorithme
 1. Créez une fonction récursive qui prend l'indice actuel, le nombre de sommets et le tableau de couleurs de sortie.
 2. Si l'index courant est égal au nombre de sommets. Vérifiez si la configuration de la couleur de sortie est sûre, c'est-à-dire vérifiez si les sommets adjacents n'ont pas la même couleur. Si les conditions sont remplies, imprimez la configuration et cassez.
-3. Attribuez une couleur à un sommet (1 à m).
+3. Attribuez une couleur à un sommet (1 à c).
 4. Pour chaque couleur attribuée, appelez récursivement la fonction avec l'indice suivant et le nombre de sommets
 5. Si une fonction récursive retourne vrai, interrompez la boucle et retourne vrai.
 
@@ -74,7 +74,7 @@ Après avoir généré une configuration de couleur, vérifiez si les sommets ad
 
 ### Pseudocode 
 
-## Algorithme heuristique
+## III. Algorithme heuristique
 AKA Backtracking 
 
 ### Idée
@@ -92,5 +92,5 @@ Le pire des cas est le meme par ce que dans le pire des cas nous allons tester t
 Le probleme avec le backtracking sans ordoner les couleurs est qu'on peut resoudre le probleme dans une duree tres courte ou tres longue. Avec un choix de couleur aleatoire il n'y a pas beaucoup de place pour l'amélioration. Donc il faut reflechir a ordoner les couleurs a choisir et les noeuds a colorier par degree, et colorier le graph par ordre decroissant des noeuds.
 
 ## Citations
-Cours graphes - Jean Stephane VAREE - chapitre II
+Cours graphes - Jean Stephane VAREE - chapitre II   
 https://www.geeksforgeeks.org/m-coloring-problem-backtracking-5/ Pour l'alogo naif
