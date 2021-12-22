@@ -8,11 +8,12 @@ import itertools
 # c'est mieux d'utiliser des entiers pour definir les couleurs au lieu d'utiliser les couleurs directement
 
 # colors = ['blue', 'orange', 'green', 'red', 'purple', 'brown', 'pink', 'gray', 'olive', 'cyan', 'navy', 'slateblue']
-colors = range(1, 100)
-colors_nb = {}
-keys = range (1,len(colors))
-for i in keys:
-    colors_nb[i] = colors[i-1]
+# colors_nb = {}
+# keys = range (1,len(colors))
+# for i in keys:
+#     colors_nb[i] = colors[i-1]
+colors = range(0, 100)
+
 
 # apply the color from the graph attributes
 def show_graph(G):
