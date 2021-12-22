@@ -11,6 +11,8 @@
 * algo backtracking
 
 ## Utilisation
-* pour executer le script des payes: `map.py`
-* Pour executer le script des gsm: `python gsm.py`
-* Pour executer le script du sudoku: `python sudoku.py`
+* pour executer le script des payes: `python map.py -i "payes_1.txt"`
+* Pour executer le script des gsm: `python gsm.py -i "antennes_1.txt"`
+* Pour executer le script du sudoku: `python sudoku.py -i "sudoku_1.txt"`
+
+###### les fichiers .txt se trouve dans le sous-dossier `exemples/`
