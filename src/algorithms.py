@@ -70,7 +70,8 @@ def algo_test(G):
             animate_graph(G)
             color_map.append(unused_colors[0])
         else:
-            pass
+            animate_graph(G)
+            print("skipped :)")
 
     show_graph(G) 
     print_graph(G)

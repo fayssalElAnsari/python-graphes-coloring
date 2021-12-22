@@ -29,8 +29,11 @@ def main(argv):
         lines = f.read().splitlines()
         for i in range(len(lines)):
             lines[i] = tuple(lines[i].split(" "))
-    for i, j, k in zip(lines[0], lines[1], lines[2]):
-        G.add_node(int(i)+9*(int(j)-1), pos=(int(i), int(j)), color=int(k))
+    for line in lines:
+        print("target is: ")
+        print(line)
+        G.add_node(int(line[0])+9*(int(line[1])-1), pos=(int(line[0]), int(line[1])), color=int(line[2]))
+
 
     # populate the graph with edges of sudoku grid
     # 1. same block
