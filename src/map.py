@@ -25,6 +25,7 @@ def main(argv):
         for i in range(len(lines)):
             lines[i] = tuple(lines[i].split(" "))
     G.add_edges_from(lines)
+    nx.set_node_attributes(G, None, "color")
     algo_naif(G)
     algo_test(G)
 
