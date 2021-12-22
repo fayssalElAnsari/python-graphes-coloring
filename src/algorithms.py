@@ -22,10 +22,18 @@ def show_graph(G):
         color_map.append(G.nodes[node]['color'])
     if nx.get_node_attributes(G, 'pos'):
         pos=nx.get_node_attributes(G,'pos')
-        nx.draw(G, pos, with_labels=True, font_weight='bold')
+        nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
     else:
-        nx.draw(G, with_labels=True, font_weight='bold')
-    plt.show()
+        nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
+    plt.show() 
+
+def print_graph(G):
+    if nx.get_node_attributes(G, 'pos'):
+        for node in G.nodes:
+            print(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1], G.nodes[node]["color"])
+    else:
+        for node in G.nodes:
+            print(node, G.nodes[node]["color"])
 
 ### ALGORITHM TEST ###
 def algo_test(G):
@@ -46,16 +54,8 @@ def algo_test(G):
         G.nodes[node]['color'] = unused_colors[0]
         color_map.append(unused_colors[0])
 
-    if nx.get_node_attributes(G, 'pos'):
-        for node in G.nodes:
-            print(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1], G.nodes[node]["color"])
-        pos=nx.get_node_attributes(G,'pos')
-        nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
-    else:
-        for node in G.nodes:
-            print(node, G.nodes[node]["color"])
-        nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
-    plt.show()  
+    show_graph(G) 
+    print_graph(G)
 
 ### ALGORITHM NAIF ###
 # une fonction pour verifier que la coloration est correcte:
@@ -91,7 +91,6 @@ def algo_naif(G):
         for permutation in permutations:
             for node, color in zip(G.nodes, permutation):
                 G.nodes[node]['color'] = color
-            # print(G.nodes.data())
             color_map = permutation
             correct = is_correct(G)
             if(correct):
@@ -99,17 +98,8 @@ def algo_naif(G):
         i = i + 1
 
 
-    if nx.get_node_attributes(G, 'pos'):
-        for node in G.nodes:
-            print(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1], G.nodes[node]["color"])
-        pos=nx.get_node_attributes(G,'pos')
-        nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
-    else:
-        for node in G.nodes:
-            print(node, G.nodes[node]["color"])
-        nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
-
-    plt.show() 
+    show_graph(G) 
+    print_graph(G) 
 
 ### BACKTRACKING ###
 # the question is how can we keep track of the choices we have made?
@@ -126,29 +116,37 @@ def algo_naif(G):
 # meaning we need to apply a breadth first search/depth first search to color the graph
 def algo_backtracking(G):
     color_map = []
-    nx.set_node_attributes(G, colors[1], "color")
+    nx.set_node_attributes(G, "", "color")
 
     node_index = 0
-    color_index = 0
     correct = False
+    max_colors = 1
+    usable_colors = range(1, max_colors)
 
     nodes_list = list(G.nodes())
     while not correct and node_index < G.number_of_nodes():
         neighbors_colors = []
-        for neighbor in G.neighbors(G.nodes[nodes_list[node_index]]):
+        for neighbor in G.neighbors(nodes_list[node_index]):
             if len(G.nodes[neighbor]) > 0:
                 neighbors_colors.append(G.nodes[neighbor]['color'])
             # the list is empty we should fall back
                 
-        unused_colors = [c for c in colors if (c not in neighbors_colors)]
+        unused_colors = [c for c in usable_colors if (c not in neighbors_colors)]
         if len(unused_colors) > 0:
             G.nodes[nodes_list[node_index]]['color'] = unused_colors[0]
             color_map.append(unused_colors[0])
         else:
-            node_index = node_index - 1
+            if node_index > 0:
+                G.nodes[nodes_list[node_index]]['color'] = ""
+                node_index = node_index - 1
+                G.nodes[nodes_list[node_index]]['color'] = G.nodes[nodes_list[node_index]]['color'] + 1
+            else:
+                max_colors = max_colors + 1
+                usable_colors = range(1, max_colors)
+        print(usable_colors)
 
-    nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
-    plt.show() 
+    show_graph(G) 
+    print_graph(G)
 
 # nx.set_node_attributes(G, colors[1], "color")
 # color_map = []

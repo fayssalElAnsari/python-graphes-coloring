@@ -35,7 +35,7 @@ for node1 in G.nodes:
         j2 = G.nodes[node2]['pos'][1]
         if ((i1 == i2 or j1 == j2 ) and (not i1+9*j1 == i2+9*j2)):
             G.add_edge(i1+9*(j1-1), i2+9*(j2-1)) 
-            
+
 # algo_naif(G) #bcp de temps pour generer tous les permutations
 
 algo_test(G)
