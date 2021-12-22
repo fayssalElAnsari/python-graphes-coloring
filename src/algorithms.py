@@ -19,8 +19,11 @@ def show_graph(G):
     color_map = []
     for node in G.nodes:
         color_map.append(G.nodes[node]['color'])
-    pos=nx.get_node_attributes(G,'pos')
-    nx.draw(G, pos, with_labels=True, font_weight='bold')
+    if nx.get_node_attributes(G, 'pos'):
+        pos=nx.get_node_attributes(G,'pos')
+        nx.draw(G, pos, with_labels=True, font_weight='bold')
+    else:
+        nx.draw(G, with_labels=True, font_weight='bold')
     plt.show()
 
 ### ALGORITHM TEST ###
@@ -42,10 +45,15 @@ def algo_test(G):
         G.nodes[node]['color'] = unused_colors[0]
         color_map.append(unused_colors[0])
 
-    for node in G.nodes:
-        print(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1], G.nodes[node]["color"])
-    pos=nx.get_node_attributes(G,'pos')
-    nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
+    if nx.get_node_attributes(G, 'pos'):
+        for node in G.nodes:
+            print(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1], G.nodes[node]["color"])
+        pos=nx.get_node_attributes(G,'pos')
+        nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
+    else:
+        for node in G.nodes:
+            print(G.nodes[node], G.nodes[node]["color"])
+        nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
     plt.show()  
 
 ### ALGORITHM NAIF ###
