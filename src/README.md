@@ -11,6 +11,7 @@
 * algo backtracking
 
 ## Utilisation
+du repertoire `src/` veuillez executer:
 * pour executer le script des payes: `python map.py -i "payes_1.txt"`
 * Pour executer le script des gsm: `python gsm.py -i "antennes_1.txt"`
 * Pour executer le script du sudoku: `python sudoku.py -i "sudoku_1.txt"`
