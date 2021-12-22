@@ -89,7 +89,7 @@ def is_correct(graph):
     return True
 
 def algo_naif(G):   
-    nx.set_node_attributes(G, "white", "color")
+    nx.set_node_attributes(G, 0, "color")
     color_map = []
     used_colors = []
     # on a le probleme de generer une permutation de n couleurs avec n la taille du graphe
@@ -104,7 +104,7 @@ def algo_naif(G):
         for permutation in permutations:
             for node, color in zip(G.nodes, permutation):
                 G.nodes[node]['color'] = color
-            color_map = permutation
+            animate_graph(G)
             correct = is_correct(G)
             if(correct):
                 break
