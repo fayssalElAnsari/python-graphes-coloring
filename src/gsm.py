@@ -1,7 +1,8 @@
 from algorithms import *
 
 G = nx.Graph()
-with open('gsm1.txt') as f:
+# os.path.dirname("..\gsm_1.txt")
+with open('..\\antennes_1.txt') as f:
     lines = f.read().splitlines()
     for i in range(len(lines)):
         lines[i] = tuple(lines[i].split(" "))

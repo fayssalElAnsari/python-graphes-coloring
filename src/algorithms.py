@@ -4,16 +4,28 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import itertools
 
-colors = ['blue', 'orange', 'green', 'red', 'purple', 'brown', 'pink', 'gray', 'olive', 'cyan']
+# will need a way to define a none color ? either color="None" or just remove the color attribute?
+# c'est mieux d'utiliser des entiers pour definir les couleurs au lieu d'utiliser les couleurs directement
+
+colors = ['blue', 'orange', 'green', 'red', 'purple', 'brown', 'pink', 'gray', 'olive', 'cyan', 'navy', 'slateblue', ]
+colors_nb = {}
+keys = range (1,len(colors))
+for i in keys:
+    colors_nb[i] = colors[i-1]
 
 # apply the color from the graph attributes
-# for node in G.nodes:
-#     color_map.append(G.nodes[node]['color'])
+def show_graph(G):
+    color_map = []
+    for node in G.nodes:
+        color_map.append(G.nodes[node]['color'])
+    pos=nx.get_node_attributes(G,'pos')
+    nx.draw(G, pos, with_labels=True, font_weight='bold')
+    plt.show()
 
 ### ALGORITHM TEST ###
 def algo_test(G):
     color_map = []
-    nx.set_node_attributes(G, colors[1], "color")
+    nx.set_node_attributes(G, "", "color")
 
     # coloring graph
     # first get the list of colors of neighbors
@@ -51,7 +63,7 @@ def is_correct(graph):
     return True
 
 def algo_naif(G):   
-    nx.set_node_attributes(G, colors[1], "color")
+    nx.set_node_attributes(G, "", "color")
     color_map = []
     used_colors = []
     # on a le probleme de generer une permutation de n couleurs avec n la taille du graphe
@@ -78,6 +90,18 @@ def algo_naif(G):
     plt.show() 
 
 ### BACKTRACKING ###
+# the question is how can we keep track of the choices we have made?
+# each time we reach a dead-end (meaning the list of possible colors is empty)
+# we will fall back, each time we fall back we need to revert the color of the
+# previous node to the first color in the colors list (revert all changes)
+# instead of keeping track of all the list of previously used colors for each node
+# we simply need to have an ordered list of possible colors, when we fall back to
+# a node we will increment to the next color, therefore we need to get the index 
+# of the current color, increment it by 1, get the corresponding color, apply it 
+# to the current node and go to the next one
+
+# another problem is the fact that the nodes are not ordered by relation in G.nodes
+# meaning we need to apply a breadth first search/depth first search to color the graph
 def algo_backtracking(G):
     color_map = []
     nx.set_node_attributes(G, colors[1], "color")

@@ -1,7 +1,7 @@
 from algorithms import *
 
 G = nx.Graph()
-with open('map1.txt') as f:
+with open('..\\map_1.txt') as f:
     lines = f.read().splitlines()
     for i in range(len(lines)):
         lines[i] = tuple(lines[i].split(" "))
