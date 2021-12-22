@@ -50,7 +50,7 @@ def print_graph(G):
 ### ALGORITHM TEST ###
 def algo_test(G):
     color_map = []
-    nx.set_node_attributes(G, 0, "color")
+    nx.set_node_attributes(G, -1, "color")
 
     # coloring graph
     # first get the list of colors of neighbors
@@ -89,7 +89,7 @@ def is_correct(graph):
     return True
 
 def algo_naif(G):   
-    nx.set_node_attributes(G, 0, "color")
+    nx.set_node_attributes(G, -1, "color")
     color_map = []
     used_colors = []
     # on a le probleme de generer une permutation de n couleurs avec n la taille du graphe
@@ -128,12 +128,12 @@ def algo_naif(G):
 # meaning we need to apply a breadth first search/depth first search to color the graph
 def algo_backtracking(G):
     color_map = []
-    nx.set_node_attributes(G, "white", "color")
+    nx.set_node_attributes(G, -1, "color")
 
     node_index = 0
     correct = False
     max_colors = 1
-    usable_colors = range(1, max_colors)
+    usable_colors = range(0, max_colors)
 
     nodes_list = list(G.nodes())
     while not correct and node_index < G.number_of_nodes():
@@ -147,15 +147,17 @@ def algo_backtracking(G):
         if len(unused_colors) > 0:
             G.nodes[nodes_list[node_index]]['color'] = unused_colors[0]
             color_map.append(unused_colors[0])
+            node_index = node_index + 1
         else:
             if node_index > 0:
-                G.nodes[nodes_list[node_index]]['color'] = ""
+                G.nodes[nodes_list[node_index]]['color'] = -1
                 node_index = node_index - 1
+                
                 G.nodes[nodes_list[node_index]]['color'] = G.nodes[nodes_list[node_index]]['color'] + 1
             else:
                 max_colors = max_colors + 1
-                usable_colors = range(1, max_colors)
-        print(usable_colors)
+                usable_colors = range(0, max_colors)
+        animate_graph(G)
 
     show_graph(G) 
     print_graph(G)
