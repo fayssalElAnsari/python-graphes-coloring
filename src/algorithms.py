@@ -99,7 +99,16 @@ def algo_naif(G):
         i = i + 1
 
 
-    nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
+    if nx.get_node_attributes(G, 'pos'):
+        for node in G.nodes:
+            print(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1], G.nodes[node]["color"])
+        pos=nx.get_node_attributes(G,'pos')
+        nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
+    else:
+        for node in G.nodes:
+            print(node, G.nodes[node]["color"])
+        nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
+
     plt.show() 
 
 ### BACKTRACKING ###

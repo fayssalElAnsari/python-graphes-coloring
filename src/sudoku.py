@@ -12,7 +12,7 @@ with open('..\\sudoku_1.txt') as f:
     for i in range(len(lines)):
         lines[i] = tuple(lines[i].split(" "))
 for i, j, k in zip(lines[0], lines[1], lines[2]):
-    G.add_node(int(i)+9*(int(j)-1), pos=(int(i), int(j)), color=colors_nb[int(k)])
+    G.add_node(int(i)+9*(int(j)-1), pos=(int(i), int(j)), color=k)
 
 # populate the graph with edges of sudoku grid
 # 1. same block
@@ -35,10 +35,10 @@ for node1 in G.nodes:
         j2 = G.nodes[node2]['pos'][1]
         if ((i1 == i2 or j1 == j2 ) and (not i1+9*j1 == i2+9*j2)):
             G.add_edge(i1+9*(j1-1), i2+9*(j2-1)) 
+            
+# algo_naif(G) #bcp de temps pour generer tous les permutations
 
 algo_test(G)
-
-# algo_naif(G) #bcp de temps pour generer tous les permutations
 
 # algo_backtracking(G)
 

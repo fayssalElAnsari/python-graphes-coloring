@@ -8,8 +8,8 @@ with open('..\\payes_1.txt') as f:
     print(lines)
 G.add_edges_from(lines)
 
-algo_test(G)
-
 algo_naif(G)
+
+algo_test(G)
 
 algo_backtracking(G)
