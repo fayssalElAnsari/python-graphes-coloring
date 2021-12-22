@@ -30,7 +30,7 @@ def main(argv):
         for i in range(len(lines)):
             lines[i] = tuple(lines[i].split(" "))
     for i, j, k in zip(lines[0], lines[1], lines[2]):
-        G.add_node(int(i)+9*(int(j)-1), pos=(int(i), int(j)), color=k)
+        G.add_node(int(i)+9*(int(j)-1), pos=(int(i), int(j)), color=int(k))
 
     # populate the graph with edges of sudoku grid
     # 1. same block
@@ -56,7 +56,7 @@ def main(argv):
 
     # algo_naif(G) #bcp de temps pour generer tous les permutations
     algo_test(G)
-    algo_backtracking(G)
+    # algo_backtracking(G)
 
 
 if __name__ == "__main__":

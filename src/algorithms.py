@@ -60,14 +60,17 @@ def algo_test(G):
     # chose the first color of the new colors list to be applied to the current node
     # do this for all the graph's nodes :)
     for node in G.nodes:
-        neighbors_colors = []
-        for neighbor in G.neighbors(node):
-            if len(G.nodes[neighbor]) > 0:
-                neighbors_colors.append(G.nodes[neighbor]['color'])
-        unused_colors = [c for c in colors if (c not in neighbors_colors)]
-        G.nodes[node]['color'] = unused_colors[0]
-        animate_graph(G)
-        color_map.append(unused_colors[0])
+        if G.nodes[node]["color"] == -1:
+            neighbors_colors = []
+            for neighbor in G.neighbors(node):
+                if len(G.nodes[neighbor]) > 0:
+                    neighbors_colors.append(G.nodes[neighbor]['color'])
+            unused_colors = [c for c in colors if (c not in neighbors_colors)]
+            G.nodes[node]['color'] = unused_colors[0]
+            animate_graph(G)
+            color_map.append(unused_colors[0])
+        else:
+            pass
 
     show_graph(G) 
     print_graph(G)
