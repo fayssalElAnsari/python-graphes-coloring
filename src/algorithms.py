@@ -52,7 +52,7 @@ def algo_test(G):
         nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
     else:
         for node in G.nodes:
-            print(G.nodes[node], G.nodes[node]["color"])
+            print(node, G.nodes[node]["color"])
         nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
     plt.show()  
 
