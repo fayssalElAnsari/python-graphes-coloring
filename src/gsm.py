@@ -22,7 +22,7 @@ def main(argv):
 
     G = nx.Graph()
     # os.path.dirname("..\gsm_1.txt")
-    with open('.\\exemples\\antennes_1.txt') as f:
+    with open(".\\exemples\\"+inputfile) as f:
         lines = f.read().splitlines()
         for i in range(len(lines)):
             lines[i] = tuple(lines[i].split(" "))

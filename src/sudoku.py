@@ -25,7 +25,7 @@ def main(argv):
             G.add_node(i+9*(j-1), color=None , pos=(i, j))
 
     # apply colors from file
-    with open('.\\exemples\\sudoku_1.txt') as f:
+    with open(".\\exemples\\"+inputfile) as f:
         lines = f.read().splitlines()
         for i in range(len(lines)):
             lines[i] = tuple(lines[i].split(" "))
