@@ -30,8 +30,6 @@ def main(argv):
         for i in range(len(lines)):
             lines[i] = tuple(lines[i].split(" "))
     for line in lines:
-        print("target is: ")
-        print(line)
         G.add_node(int(line[0])+9*(int(line[1])-1), pos=(int(line[0]), int(line[1])), color=int(line[2]))
 
 
