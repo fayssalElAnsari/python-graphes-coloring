@@ -14,6 +14,18 @@ import itertools
 #     colors_nb[i] = colors[i-1]
 colors = range(0, 100)
 
+def animate_graph(G):
+    color_map = []
+    for node in G.nodes:
+        color_map.append(G.nodes[node]['color'])
+    if nx.get_node_attributes(G, 'pos'):
+        pos=nx.get_node_attributes(G,'pos')
+        nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
+    else:
+        nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
+    plt.show(block=False)
+    plt.pause(0.01)
+    plt.close()
 
 # apply the color from the graph attributes
 def show_graph(G):
@@ -25,7 +37,7 @@ def show_graph(G):
         nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
     else:
         nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
-    plt.show() 
+    plt.show()
 
 def print_graph(G):
     if nx.get_node_attributes(G, 'pos'):
@@ -38,7 +50,7 @@ def print_graph(G):
 ### ALGORITHM TEST ###
 def algo_test(G):
     color_map = []
-    nx.set_node_attributes(G, "", "color")
+    nx.set_node_attributes(G, 0, "color")
 
     # coloring graph
     # first get the list of colors of neighbors
@@ -52,6 +64,7 @@ def algo_test(G):
                 neighbors_colors.append(G.nodes[neighbor]['color'])
         unused_colors = [c for c in colors if (c not in neighbors_colors)]
         G.nodes[node]['color'] = unused_colors[0]
+        animate_graph(G)
         color_map.append(unused_colors[0])
 
     show_graph(G) 
@@ -76,7 +89,7 @@ def is_correct(graph):
     return True
 
 def algo_naif(G):   
-    nx.set_node_attributes(G, "", "color")
+    nx.set_node_attributes(G, "white", "color")
     color_map = []
     used_colors = []
     # on a le probleme de generer une permutation de n couleurs avec n la taille du graphe
@@ -97,7 +110,6 @@ def algo_naif(G):
                 break
         i = i + 1
 
-
     show_graph(G) 
     print_graph(G) 
 
@@ -116,7 +128,7 @@ def algo_naif(G):
 # meaning we need to apply a breadth first search/depth first search to color the graph
 def algo_backtracking(G):
     color_map = []
-    nx.set_node_attributes(G, "", "color")
+    nx.set_node_attributes(G, "white", "color")
 
     node_index = 0
     correct = False
