@@ -7,7 +7,8 @@ import itertools
 # will need a way to define a none color ? either color="None" or just remove the color attribute?
 # c'est mieux d'utiliser des entiers pour definir les couleurs au lieu d'utiliser les couleurs directement
 
-colors = ['blue', 'orange', 'green', 'red', 'purple', 'brown', 'pink', 'gray', 'olive', 'cyan', 'navy', 'slateblue', ]
+# colors = ['blue', 'orange', 'green', 'red', 'purple', 'brown', 'pink', 'gray', 'olive', 'cyan', 'navy', 'slateblue']
+colors = range(1, 100)
 colors_nb = {}
 keys = range (1,len(colors))
 for i in keys:
@@ -41,7 +42,10 @@ def algo_test(G):
         G.nodes[node]['color'] = unused_colors[0]
         color_map.append(unused_colors[0])
 
-    nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
+    for node in G.nodes:
+        print(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1], G.nodes[node]["color"])
+    pos=nx.get_node_attributes(G,'pos')
+    nx.draw(G, pos, node_color=color_map, with_labels=True, font_weight='bold')
     plt.show()  
 
 ### ALGORITHM NAIF ###

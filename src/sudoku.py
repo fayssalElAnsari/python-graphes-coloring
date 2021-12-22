@@ -7,6 +7,8 @@ for i in range(9):
     for j in range(9):
         G.add_node(i+j*9, color=None , pos=(i, j))
 
+show_graph(G)
+
 # apply colors from file
 with open('..\\sudoku_1.txt') as f:
     lines = f.read().splitlines()
