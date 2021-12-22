@@ -2,9 +2,15 @@
 
 ## Etat du code
 
-Décrire ici ce qui a été réalisé. Et ce qui n'a pas été réalisé.
-Préciser si les algorithmes implantés sont ceux du rendu 2. Sinon les expliciter ici.
+### ce qui a ete realise
+* algorithmes heuristique
+* algorithmes naif
+* fonction animation de chaque etape des algorithmes
+
+### ce qui n'a pas ete realise
+* algo backtracking
 
 ## Utilisation
-
-Ecrire ici les instructions (exactement, un copier-coller en ligne de commande doit fonctionner) pour lancer le code sur les exemples ainsi que l'interprétation des résultats, pour chacun des trois problèmes.
+* pour executer le script des payes: `map.py`
+* Pour executer le script des gsm: `python gsm.py`
+* Pour executer le script du sudoku: `python sudoku.py`
